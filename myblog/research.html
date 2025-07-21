@@ -1,0 +1,40 @@
+---
+layout: default
+title: Research
+description: 最新研究项目
+---
+<section class="research-projects">
+    <h1>我的研究项目</h1>
+    <p>My research interests lie in the intersection of communication methodology and discourse analysis, with a specific focus on automated content analysis and the discourse of violence among marginalized groups.</p>
+
+    <ul class="project-list">
+        {% for project in site.collections.research_projects | sort_by: 'date' reverse %} {# 遍历所有的研究项目，并按日期倒序排列 #}
+        <li>
+            <h2 class="project-item-title">
+                <a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
+            </h2>
+            <p class="project-item-meta">
+                {% if project.date %}
+                    <span class="date">{{ project.date | date: "%Y年%m月%d日" }}</span>
+                {% endif %}
+                {% if project.authors %}
+                    <span class="authors">作者：{{ project.authors }}</span>
+                {% endif %}
+                {% if project.status %}
+                    <span class="status">状态：{{ project.status }}</span>
+                {% endif %}
+            </p>
+            {% if project.description %}
+                <p class="project-item-description">{{ project.description }}</p>
+            {% endif %}
+            {% if project.links %}
+                <ul class="project-links">
+                    {% for link in project.links %}
+                        <li><a href="{{ link.url }}" target="_blank">{{ link.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>

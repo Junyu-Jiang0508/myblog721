@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Jekyll v{{ jekyll.version }}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="author" content="{{ site.author }}" />
+    <meta property="og:locale" content="en" />
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <script type="application/ld+json">
+        {"@context":"https://schema.org",
+        "@type":"{% if page.layout == 'post' %}BlogPosting{% else %}WebSite{% endif %}",
+        "author":{"@type":"Person","name":"{{ site.author }}","url":"{{ site.url }}"},
+        "description":"{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}",
+        "headline":"{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+        "url":"{{ page.url | absolute_url }}"}
+    </script>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link href="/icon.png" rel="shortcut icon" type="image/png" sizes="128x128" media="(prefers-color-scheme: light)">
+    <link href="/icon.png" rel="shortcut icon" type="image/png" sizes="128x128" media="(prefers-color-scheme: dark)">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/atom.xml' | relative_url }}">
+    <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ '/feed.json' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    <link rel="sitemap" type="application/xml" title="sitemap" href="{{ '/sitemap.xml' | relative_url }}" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZJB8RH97S"></script>
+    <script src="{{ '/js/analytics.js' | relative_url }}"></script>
+    <script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="aac76813-8785-4a60-a221-c7d3e327d967"></script>
+    <script src="{{ '/js/mathjax-config.js' | relative_url }}"></script>
+    <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <main>
+        {% include header.html %} {# 引入头部导航，我们将在下一步创建它 #}
+        {{ content }} {# 这是关键！所有使用此布局的页面内容将在此处插入 #}
+    </main>
+    <script src="{{ '/js/copyCode.js' | relative_url }}"></script>
+</body>
+</html>

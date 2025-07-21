@@ -1,0 +1,10 @@
+<header aria-hidden="true" class="no-print">
+    <nav role="navigation" aria-hidden="true">
+        <ul>
+            <li{% if page.url == '/' %} class="active"{% endif %}><a href="{{ '/' | relative_url }}">About</a></li>
+            <li{% if page.url contains '/research' %} class="active"{% endif %}><a href="{{ '/research' | relative_url }}" >Research</a></li>
+            <li{% if page.url contains '/blog' %} class="active"{% endif %}><a href="{{ '/blog' | relative_url }}" >Blog</a></li>
+            <li{% if page.url contains '/search' %} class="active"{% endif %}><a href="{{ '/search' | relative_url }}" >Search</a></li>
+        </ul>
+    </nav>
+</header>

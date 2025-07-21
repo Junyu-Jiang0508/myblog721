@@ -1,0 +1,28 @@
+# _config.yml 文件内容 (已根据您的域名更新)
+
+title: Junyu JIANG's Personal Website
+description: This is Junyu JIANG's personal website 这是蒋竣羽的个人网站
+author: Junyu JIANG
+email: juj013@ucsd.edu
+url: "https://junyu-jiang0508.github.io" # <-- 更新为您的 GitHub Pages 根域名
+baseurl: "/myblog721" # <-- 更新为您的仓库名（子目录）
+
+# Permalinks (永久链接) 配置
+# 这定义了博客文章的 URL 结构。例如：/blog/:year/:month/:day/:title.html
+permalink: /blog/:year/:month/:day/:title.html
+
+# 排除不需要 Jekyll 处理的文件和文件夹，这些文件不会被复制到最终的 _site 文件夹中
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules # 如果您使用 npm 包
+  - vendor # 如果您有 vendor 文件夹
+  - .idea # IDE 配置
+  - .DS_Store # macOS 系统文件
+
+# Jekyll Collections (集合) 配置
+# 用于管理除了博客文章之外的“内容类型”，例如您的研究项目
+collections:
+  research_projects:
+    output: true # 确保这些集合的页面会生成对应的 HTML 文件
+    permalink: /research_projects/:name.html # 定义集合中页面的 URL 结构

@@ -1,0 +1,22 @@
+---
+layout: default # 这告诉 Jekyll 使用 _layouts/default.html 布局
+title: Blog # 为此页面设置标题
+description: 最新博客文章 # 为此页面设置描述
+---
+<section>
+    <h1>博客文章</h1>
+    <ul class="post-list">
+        {% for post in site.posts %} {# 遍历所有的博客文章 #}
+        <li>
+            <span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span> {# 显示文章日期 #}
+            <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> {# 显示文章标题并链接到文章页面 #}
+            </h2>
+            {% if post.excerpt %}
+                {{ post.excerpt | strip_html | truncatewords: 50 }} {# 显示文章摘要，自动截取前50个词，并去除HTML标签 #}
+            {% endif %}
+            <a href="{{ post.url | prepend: site.baseurl }}">阅读更多...</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
